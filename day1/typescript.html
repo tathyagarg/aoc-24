@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Typescript Solution - Day 1</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../prism.css">
+</head>
+
+<body>
+    <div id="navbar">
+        <a href='../index.html'>[Home]</a>
+        <a href='https://adventofcode.com/'>[AoC]</a>
+    </div>
+    <div id="main">
+        <div id="mid">
+            <h1>Credit: <a href="https://www.reddit.com/r/adventofcode/comments/1h3vp6n/comment/lztw2j0/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button" id="credit">[Here]</a></h1>
+            <div class='code full'>
+                <pre><code class="language-typescript">const contents = getFileContents();
+const lines = contents.trim().split(/\n/g);
+
+const leftList: number[] = lines.map( n => Number(n.split(/\s+/)[0]));
+const rightList: number[] = lines.map( n => Number(n.split(/\s+/)[1]));
+
+leftList.sort() && rightList.sort();
+
+let totalPart1 = 0, totalPart2 = 0;
+for (let i = 0; i < lines.length; i++) {
+    totalPart1 += Math.abs(leftList[i] - rightList[i]);
+    totalPart2 += leftList[i] * rightList.filter( n => n === leftList[i]).length;
+}
+console.log(`Part 1: ${totalPart1}, Part 2: ${totalPart2}`);</code></pre>
+            </div>
+        </div>
+    </div>
+    <script src="../prism.js"></script>
+</body>
+
+</html>

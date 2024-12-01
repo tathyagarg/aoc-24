@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Advent of Code</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="icon" href="./favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+  <div id="navbar">
+    <a href='index.html'>[Home]</a>
+    <a href='https://adventofcode.com/'>[AoC]</a>
+  </div>
+  <div id="calendar">
+  </div>
+  <script>
+    const exists = [1];
+
+    const calendar = document.getElementById("calendar")
+    for (let i = 1; i < 26; i++) {
+      const div = document.createElement('div')
+      const a = document.createElement('a')
+      a.innerText = i
+      div.className += "day "
+
+      if (exists.includes(i)) {
+        a.href = `day${i}/index.html`
+        div.className += "exists"
+      } else {
+        a.href = "not-yet.html"
+      }
+      div.appendChild(a)
+
+      calendar.appendChild(div)
+    }
+  </script>
+</body>
+
+</html>

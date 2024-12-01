@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>C Solution - Day 1</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../prism.css">
+</head>
+
+<body>
+    <div id="navbar">
+        <a href='../index.html'>[Home]</a>
+        <a href='https://adventofcode.com/'>[AoC]</a>
+    </div>
+    <div id="main">
+        <div id="mid">
+            <h1>Credit: <a href="https://www.reddit.com/r/adventofcode/comments/1h3vp6n/comment/lzu6ecx/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button" id="credit">[Here]</a></h1>
+            <div class='code full'>
+			    <pre><code class="language-c">
+#include &lt;stdio.h>
+#include &lt;stdlib.h>
+
+int a[1 << 18], b[1 << 18], n, f[1 << 19];
+
+int C(const void *i, const void *j) {
+    return *(int*)i - *(int*)j;
+}
+
+int main() {
+    while (2 == scanf("%d%d", a + n, b + n))
+        ++f[b[n++]];
+    qsort(a, n, sizeof *a, C);
+    qsort(b, n, sizeof *b, C);
+    long long z = 0, z2 = 0;
+    for (int i = 0; i < n; ++i)
+        z += abs(a[i] - b[i]),
+    z2 += a[i] * 1ll * f[a[i]];
+    printf("%lld\n%lld", z, z2);
+}</code></pre>
+            </div>
+        </div>
+    </div>
+    <script src="../prism.js"></script>
+</body>
+
+</html>
